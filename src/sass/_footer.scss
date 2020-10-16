@@ -1,0 +1,127 @@
+.footer {
+  background-color: $hover-color;
+  @media screen and (max-width: 767px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+.footer-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: 3px solid black;
+  padding-bottom: 30px;
+  @media screen and (max-width: 479px) {
+    max-width: 450px;
+  }
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 768px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+}
+.footer-contacts {
+  text-align: center;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-right: 40px;
+    width: 300px;
+  }
+  & p {
+    @extend %text-throw;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.66;
+    letter-spacing: 0.02em;
+    color: text-color;
+  }
+  & a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: $main-color;
+    border-radius: 40px;
+    transition: $animation-duration;
+    &:hover,
+    &:focus {
+      background-color: #191c26;
+    }
+  }
+}
+.footer-social {
+  @extend %list-throw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-right: 40px;
+  }
+}
+.social-links {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: $main-color;
+    transition: $animation-duration;
+    &:hover,
+    &:focus {
+      background-color: #191c26;
+    }
+  }
+}
+.mobile {
+  fill: rgb(206, 43, 14);
+}
+.social__icon {
+  width: 25px;
+  height: 25px;
+}
+.footer-button {
+  text-align: center;
+}
+.footer-link {
+  @extend %links-button;
+  @media screen and (min-width: 768px) {
+    width: 210px;
+  }
+  flex-grow: 1;
+  background-color: $text-color;
+  color: $main-color;
+  transition: $animation-duration;
+  &:hover,
+  &:focus {
+    background-color: $main-color;
+    color: $text-color;
+  }
+}
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+}

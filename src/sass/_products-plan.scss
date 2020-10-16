@@ -1,0 +1,118 @@
+.products {
+  @media screen and (max-width: 767px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+.products_container {
+  position: relative;
+  @extend %list-throw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  @media screen and (max-width: 479px) {
+    max-width: 450px;
+  }
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+}
+.products__image {
+  display: block;
+  object-position: center;
+  object-fit: cover;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    width: 150px;
+    height: 100px;
+    &:nth-child(odd) {
+      margin-right: 20px;
+    }
+    &:nth-child(-n + 2) {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    width: 200px;
+  }
+}
+.products__image__container {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin-right: 40px;
+  }
+}
+.products__title {
+  @extend %text-throw;
+  text-align: center;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+.products__text {
+  @extend %text-throw;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.66;
+  letter-spacing: 0.02em;
+  color: $little-text-color;
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0;
+  }
+  &__container {
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+  }
+}
+.products-link {
+  @extend %links-button;
+  &__container {
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 0;
+      left: 100px;
+    }
+    @media screen and (min-width: 1200px) {
+      position: absolute;
+      top: auto;
+      left: auto;
+      bottom: -50%;
+      right: 43%;
+    }
+  }
+}

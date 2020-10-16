@@ -1,0 +1,74 @@
+.slimming {
+  @media screen and (max-width: 767px) {
+    padding-bottom: 50px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-bottom: 100px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 100px;
+  }
+}
+.slimming_container {
+  @extend %list-throw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  @media screen and (max-width: 479px) {
+    max-width: 450px;
+  }
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+}
+.slimming__title {
+  @extend %text-throw;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.slimming__text {
+  @extend %text-throw;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.66;
+  letter-spacing: 0.02em;
+  color: $little-text-color;
+}
+.slimming__text__program {
+  @extend %text-throw;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.66;
+  letter-spacing: 0.02em;
+  color: $little-text-color;
+  border-bottom: 2px solid $hover-color;
+  & span {
+    color: $hover-color;
+  }
+}
+.slimming__text__button {
+  @media screen and (max-width: 767px) {
+    text-align: left;
+  }
+  @media screen and (min-width: 768px) {
+    text-align: center;
+  }
+}
+.slimming__text__link {
+  @extend %links-button;
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
+}

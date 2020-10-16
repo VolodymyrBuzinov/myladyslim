@@ -1,0 +1,55 @@
+$main-color: #ffffff;
+$hover-color: #ff6c00;
+$text-color: rgb(48, 48, 48);
+$little-text-color: #555555;
+$bg-color: #f5f4fa;
+$animation-duration: cubic-bezier(0.4, 0, 0.2, 1) 400ms;
+$roboto: 'Roboto', sans-serif;
+$anton: 'Anton', sans-serif;
+$lobster: 'Lobster', cursive;
+%text-throw {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+%list-throw {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+%link-throw {
+  display: block;
+  text-decoration: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+%social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 20px;
+}
+%button {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: $hover-color;
+  text-decoration: none;
+}
+%links-button {
+  @extend %button;
+  @extend %link-throw;
+  display: inline-flex;
+  font-family: $lobster;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 7px -5px 5px 0px rgba(114, 54, 4, 0.75);
+  transition: $animation-duration;
+  color: $text-color;
+  &:hover,
+  &:focus {
+    transform: translateY(-7px);
+    color: $main-color;
+    background-color: $text-color;
+  }
+}

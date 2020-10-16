@@ -1,0 +1,244 @@
+//
+body {
+  font-family: $roboto;
+}
+.header {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url('../images/main/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('../images/main/hero@2x.jpg');
+  }
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 288dpi),
+    screen and (min-resolution: 3dppx) {
+    background-image: url('../images/main/hero@3x.jpg');
+  }
+  @media screen and (min-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  @media screen and (max-width: 479px) {
+    max-width: 450px;
+  }
+  @media screen and (min-width: 480px) {
+    width: 480px;
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    margin-bottom: 60px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+}
+.header-logo {
+  @media screen and (min-width: 320px) {
+    width: 70px;
+    height: 70px;
+  }
+  @media screen and (min-width: 480px) {
+    width: 100px;
+    height: 87px;
+  }
+}
+.burger-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  fill: $hover-color;
+  z-index: 300;
+}
+.burger-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.header-menu {
+  @extend %list-throw;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+  @media screen and (max-width: 767px) {
+    transition: $animation-duration;
+    transform: translateX(100%);
+    width: 100%;
+    border-radius: 20px;
+    z-index: 200;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  &__chekmark {
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+  }
+  &_link {
+    @extend %link-throw;
+    @media screen and (min-width: 320px) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: $text-color;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1.33;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition: $animation-duration;
+      @media screen and (min-width: 768px) {
+        color: $text-color;
+        fill: $text-color;
+      }
+      &:hover,
+      &:focus {
+        fill: $hover-color;
+        color: $hover-color;
+      }
+    }
+  }
+}
+.header-menu__item {
+  @media screen and (min-width: 768px) {
+    width: 250px;
+  }
+}
+
+.burger-button:hover,
+.burger-button:focus .burger__open {
+  fill: $text-color;
+}
+
+.burger-button.is-open .burger__open {
+  transform: translateX(100%);
+  transition: $animation-duration;
+}
+
+.burger-button .burger__close {
+  transition: $animation-duration;
+  transform: translateX(100%);
+}
+
+.burger-button.is-open .burger__close {
+  transform: translateX(0);
+}
+
+.burger-button:hover,
+.burger-button:focus .burger__close {
+  fill: $text-color;
+}
+
+@media screen and (min-width: 768px) {
+  .burger-button {
+    display: none;
+  }
+}
+.header-info {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  @media screen and (max-width: 479px) {
+    max-width: 450px;
+  }
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+  &__paragraph {
+    @extend %text-throw;
+    margin-bottom: 20px;
+    color: $text-color;
+    font-family: $lobster;
+    font-size: 20px;
+    line-height: 1.33;
+    letter-spacing: 0.09em;
+    border-radius: 20px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 40px;
+    }
+  }
+  &__title {
+    @extend %text-throw;
+    margin-bottom: 20px;
+    color: $hover-color;
+    text-shadow: black 0 0 10px;
+    font-size: 50px;
+    font-family: $lobster;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 40px;
+    }
+  }
+  &__par {
+    @extend %text-throw;
+    margin-bottom: 20px;
+    color: $text-color;
+    font-family: $lobster;
+    font-size: 20px;
+    line-height: 1.33;
+    letter-spacing: 0.09em;
+    border-radius: 20px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 40px;
+    }
+  }
+}
+.button-form {
+  @extend %button;
+  @extend %link-throw;
+  display: inline-flex;
+  font-family: $lobster;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 7px -5px 5px 0px rgba(114, 54, 4, 0.75);
+  transition: $animation-duration;
+  color: $text-color;
+  &:hover,
+  &:focus {
+    transform: translateY(-7px);
+    color: $main-color;
+    background-color: $text-color;
+  }
+}
