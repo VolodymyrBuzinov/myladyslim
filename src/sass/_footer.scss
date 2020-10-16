@@ -122,6 +122,7 @@
   }
 }
 .copyright {
+  @extend %text-throw;
   text-align: center;
   margin-top: 40px;
 }
