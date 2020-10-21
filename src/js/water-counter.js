@@ -1,3 +1,4 @@
+var debounce = require('lodash.debounce');
 const getInput = document.querySelector('.input');
 const getOutput = document.querySelector('.output');
 const countOfWater = 30;
@@ -6,5 +7,5 @@ const onValueCount = (evt) => {
       getOutput.textContent = `Вам нужно пить каждый день: ${evt.target.value * countOfWater} мл. воды!!!`;
    }
 }
-let valueThrottled = _.debounce(onValueCount, 500);
+let valueThrottled = debounce(onValueCount, 500);
 document.addEventListener('input', valueThrottled);
