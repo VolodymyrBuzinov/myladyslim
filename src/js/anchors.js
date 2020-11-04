@@ -1,5 +1,9 @@
-jQuery("body").on('click', '[href*="#"]', function(e){
-  var fixed_offset = 100;
-  jQuery('html,body').stop().animate({ scrollTop: jQuery(this.hash).offset().top - fixed_offset }, 1000);
-  e.preventDefault();
+$(document).ready(function() {
+  $('a[href^="#"]').click(function() {
+      var target = $(this.hash);     
+      if (target.length == 0) target = $('a[name="' + this.hash.substr(1) + '"]');
+      if (target.length == 0) target = $('html');
+      $('html, body').animate({ scrollTop: target.offset().top}, 1000);
+      return false;
+  });
 });
