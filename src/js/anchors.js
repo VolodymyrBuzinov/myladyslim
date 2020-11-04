@@ -1,7 +1,5 @@
- $(document).ready(function(){
-    $("body").on("click","a", function (event) {        
-        var id  = $(this).attr('href'),
-            top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top}, 1500);
-    });
+jQuery("body").on('click', '[href*="#"]', function(e){
+  var fixed_offset = 100;
+  jQuery('html,body').stop().animate({ scrollTop: jQuery(this.hash).offset().top - fixed_offset }, 1000);
+  e.preventDefault();
 });
