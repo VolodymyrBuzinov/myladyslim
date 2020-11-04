@@ -6,6 +6,9 @@ const ref = {
   ),
   lightBox: document.querySelector('.massage-lightbox'),
   bigImg: document.querySelector('.massage-lightbox__image'),
+  arrowUp: document.querySelector('#button'),
+  arrowLeft: document.querySelector('.massage-arrow-left'),
+  arrowRight: document.querySelector('.massage-arrow-right'),
 };
 const galleryItemsPalette = function (images) {
   return images
@@ -35,10 +38,12 @@ const showImg = evt => {
   evt.preventDefault();
   ref.lightBox.classList.add('is-open');
   ref.bigImg.src = evt.target.dataset.source;
+  ref.arrowUp.classList.add('is-hidden');
 };
 const closeImg = () => {
   ref.lightBox.classList.remove('is-open');
   ref.bigImg.src = '';
+  ref.arrowUp.classList.remove('is-hidden');
 };
 const getIndexOfChildren = () => {
   return galleryItems.findIndex(evt => evt.original === ref.bigImg.src);
@@ -71,21 +76,32 @@ const isOnSwitchImages = evt => {
     }
   }
 };
-const onTapScreen = evt => {
-  const index = getIndexOfChildren();
-  if (evt.targetTouches.length === 1) {
-    if (index !== galleryItems.length - 1) {
-      ref.bigImg.src = galleryItems[index + 1].original;
-    }    
-  }
-  if (evt.targetTouches.length !== 1) {
-    if (idx !== 0) {
-      ref.bigImg.src = galleryItems[idx - 1].original;
-    }
-  }
-}
-
+// const onTapScreen = evt => {
+//   const index = getIndexOfChildren();
+//   if (evt.targetTouches.length === 1) {
+//     if (index !== galleryItems.length - 1) {
+//       ref.bigImg.src = galleryItems[index + 1].original;
+//     }    
+//   }
+//   if (evt.targetTouches.length !== 1) {
+//     if (idx !== 0) {
+//       ref.bigImg.src = galleryItems[idx - 1].original;
+//     }
+//   }
+// }
+// addEventListener('touchstart', onTapScreen);
 addEventListener('click', controlButtonsOfGallery);
 addEventListener('keydown', controlButtonsOfGallery);
 addEventListener('keydown', isOnSwitchImages);
-addEventListener('touchstart', onTapScreen);
+ref.arrowLeft.addEventListener('click', () => {
+  const index = getIndexOfChildren();
+  if (index !== 0) {
+      ref.bigImg.src = galleryItems[index - 1].original;      
+    }
+})
+ref.arrowRight.addEventListener('click', () => {
+  const index = getIndexOfChildren();
+  if (index !== galleryItems.length - 1) {
+      ref.bigImg.src = galleryItems[index + 1].original;
+    }
+})

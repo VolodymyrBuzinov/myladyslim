@@ -47,6 +47,7 @@
 
 /* Lightbox */
 .lightbox {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +95,7 @@
 .lightbox__button {
   position: absolute;
   top: 8px;
-  right: 8px;
+  right: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,9 +105,9 @@
   margin: 0;
   border: none;
   border-radius: 50%;
-  background-color: #ffffff;  
+  background-color: $hover-color;
   cursor: pointer;
-  transition: background-color var(--animation-duration) var(--timing-function);
+  transition: $animation-duration;
   outline: none;
   background-image: url('../images/icons/cancel-circle.svg');
   background-position: center;
@@ -116,7 +117,7 @@
 
 .lightbox__button:hover,
 .lightbox__button:focus {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $main-color;
 }
 .maraphone {
   @media screen and (max-width: 767px) {
@@ -192,4 +193,32 @@
       text-align: center;
     }
   }
+}
+.arrows {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  z-index: 100;
+  background-color: $hover-color;
+  padding: 10px;
+  transition: $animation-duration;
+  @media screen and (max-width: 479px) {
+    top: 80%;
+  }
+}
+.arrow-left {
+  left: 10%;
+}
+.arrow-right {
+  right: 10%;
+}
+.arrows:hover {
+  cursor: pointer;
+  background-color: #333;
+  fill: $main-color;
+}
+.arrows:active {
+  background-color: #555;
+  fill: $main-color;
 }

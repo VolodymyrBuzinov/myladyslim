@@ -6,7 +6,11 @@ const ref = {
   ),
   lightBox: document.querySelector('.lightbox'),
   bigImg: document.querySelector('.lightbox__image'),
+  arrowUp: document.querySelector('#button'),
+  arrowLeft: document.querySelector('.arrow-left'),
+  arrowRight: document.querySelector('.arrow-right'),
 };
+
 const galleryItemsPalette = function (images) {
   return images
     .map(
@@ -31,13 +35,15 @@ ref.containerGallery.insertAdjacentHTML(
   'beforeend',
   galleryItemsPalette(galleryItems),
 );
-const showImg = evt => {
+const showImg = evt => {  
   evt.preventDefault();
   ref.lightBox.classList.add('is-open');
-  ref.bigImg.src = evt.target.dataset.source;
+  ref.bigImg.src = evt.target.dataset.source;  
+  ref.arrowUp.classList.add('is-hidden');
 };
 const closeImg = () => {
   ref.lightBox.classList.remove('is-open');
+  ref.arrowUp.classList.remove('is-hidden');
   ref.bigImg.src = '';
 };
 const getIndexOfChildren = () => {
@@ -58,34 +64,47 @@ const controlButtonsOfGallery = evt => {
     closeImg(evt);
   }
 };
-const isOnSwitchImages = evt => {
+const isOnSwitchImages = evt => { 
   const idx = getIndexOfChildren();
   if (evt.code === 'ArrowLeft') {
     if (idx !== 0) {
-      ref.bigImg.src = galleryItems[idx - 1].original;
+      ref.bigImg.src = galleryItems[idx - 1].original;      
     }
   }
   if (evt.code === 'ArrowRight') {
     if (idx !== galleryItems.length - 1) {
       ref.bigImg.src = galleryItems[idx + 1].original;
     }
-  }
+  }  
 };
-const onTapScreen = evt => {
-  const index = getIndexOfChildren();
-  if (evt.targetTouches.length === 1) {
-    if (index !== galleryItems.length - 1) {
-      ref.bigImg.src = galleryItems[index + 1].original;
-    }    
-  }
-  if (evt.targetTouches.length !== 1) {
-    if (idx !== 0) {
-      ref.bigImg.src = galleryItems[idx - 1].original;
-    }
-  }
-}
-
+// const onTapScreen = evt => {
+//   const index = getIndexOfChildren();
+//   if (evt.targetTouches.length === 1) {
+//     if (index !== galleryItems.length - 1) {
+//       ref.bigImg.src = galleryItems[index + 1].original;
+//     }    
+//   }
+//   if (evt.targetTouches.length !== 1) {
+//     if (idx !== 0) {
+//       ref.bigImg.src = galleryItems[idx - 1].original;
+//     }
+//   }
+// }
+// addEventListener('touchstart', onTapScreen);
 addEventListener('click', controlButtonsOfGallery);
 addEventListener('keydown', controlButtonsOfGallery);
 addEventListener('keydown', isOnSwitchImages);
-addEventListener('touchstart', onTapScreen);
+
+
+ref.arrowLeft.addEventListener('click', () => {
+  const index = getIndexOfChildren();
+  if (index !== 0) {
+      ref.bigImg.src = galleryItems[index - 1].original;      
+    }
+})
+ref.arrowRight.addEventListener('click', () => {
+  const index = getIndexOfChildren();
+  if (index !== galleryItems.length - 1) {
+      ref.bigImg.src = galleryItems[index + 1].original;
+    }
+})
