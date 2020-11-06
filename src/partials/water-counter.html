@@ -1,7 +1,40 @@
 
-<section id="count" class="water-counter">
+<section class="water-counter">
+    <div class="calories-container">
+        <h2 class="calories-title">Подсчитай свои дневные нормы</h2>
+        <p class="water-counter__info is-centered"><span class="is-big">Одним из наиболее эффективных и безопасных способов похудения является подсчет каллорий! <br></span>Именно благодаря разумному ограничению калорийности вашего рациона, вы сбалансируете питание и улучшите фигуру. На самом
+        деле, если однажды научиться считать калорий и следить за своим питанием, то вы не только приведете свое тело в форму,
+        но и постепенно измените пищевые привычки. <br><span class="is-big">Ниже вы можете узнать свою норму каллорий и воды в день!!!</span></p>
+        <p class="calories__text">Выберите пол</p>
+        <ul class="calories-list">
+                        
+            <li class="calories-list__item man"><label>Мужчина<input id="male" name="gender" type="radio" checked
+                        class="is-hide"></label></li>
+    
+            <li class="calories-list__item woman"><label>Женщина<input id="female" name="gender" type="radio"
+                        class="is-hide"></label></li>
+        </ul>
+        <ul class="calories-catalog">
+            <li class="calories-catalog__item">
+                <p class="calories__text">Введите свой возраст</p>
+                <input class="input-calories" id="age" type="number" placeholder="Лет">
+            </li>
+            <li class="calories-catalog__item">
+                <p class="calories__text">Введите свой вес</p>
+                <input class="input-calories" id="weight" type="number" placeholder="Килограмм">
+            </li>
+            <li class="calories-catalog__item">
+                <p class="calories__text">Введите свой рост</p>
+                <input class="input-calories" id="growth" type="number" placeholder="Сантиметров">
+            </li>
+            <li class="calories-catalog__item result"></li>
+            <li class="calories-catalog__item">
+                <input id="count" type="submit" value="Посчитать">
+            </li>
+        </ul>
+    </div>
     <div class="water-counter__container">
-        <p class="water-counter__info"><span>Вода - источник жизни на земле!</span> Проверь, достаточно ли в тебе жизненных ресурсов.
+        <p class="water-counter__info"><span class="is-big">Вода - источник жизни на земле!</span> Проверь, достаточно ли в тебе жизненных ресурсов.
         Умнож свой вес в кг на 30 мл воды и получишь свою норму на день. Не забывай, что вода должна быть качественной!</p>
         <input type="text" placeholder="Введите свой вес" class="input">        
         <p class="output">Вам нужно пить каждый день: мл. воды!!!</p>

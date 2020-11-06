@@ -77,20 +77,7 @@ const isOnSwitchImages = evt => {
     }
   }  
 };
-// const onTapScreen = evt => {
-//   const index = getIndexOfChildren();
-//   if (evt.targetTouches.length === 1) {
-//     if (index !== galleryItems.length - 1) {
-//       ref.bigImg.src = galleryItems[index + 1].original;
-//     }    
-//   }
-//   if (evt.targetTouches.length !== 1) {
-//     if (idx !== 0) {
-//       ref.bigImg.src = galleryItems[idx - 1].original;
-//     }
-//   }
-// }
-// addEventListener('touchstart', onTapScreen);
+
 addEventListener('click', controlButtonsOfGallery);
 addEventListener('keydown', controlButtonsOfGallery);
 addEventListener('keydown', isOnSwitchImages);
@@ -99,12 +86,12 @@ addEventListener('keydown', isOnSwitchImages);
 ref.arrowLeft.addEventListener('click', () => {
   const index = getIndexOfChildren();
   if (index !== 0) {
-      ref.bigImg.src = galleryItems[index - 1].original;      
-    }
-})
+    ref.bigImg.src = galleryItems[index - 1].original;
+  }
+});
 ref.arrowRight.addEventListener('click', () => {
   const index = getIndexOfChildren();
   if (index !== galleryItems.length - 1) {
-      ref.bigImg.src = galleryItems[index + 1].original;
-    }
-})
+    ref.bigImg.src = galleryItems[index + 1].original;
+  }
+});
