@@ -29,7 +29,8 @@ const onCountCalories = function (evt) {
     total = Math.round(66.5 + (13.75 * refs.weight.value) + (5.003 * refs.growth.value) - (6.775 * refs.age.value));        
         refs.result.textContent = `Ваша норма ${total} каллорий в день`;
     }
-    if (refs.female.checked === true) {        
+        if (refs.female.checked === true) {   
+        refs.result.style.opacity = '1';
         total = Math.round(655.1 + (9.563 * refs.weight.value) + (1.58 * refs.growth.value) - (4.676 * refs.age.value));     
   refs.result.textContent = `Ваша норма ${total} каллорий в день`;      
         }
